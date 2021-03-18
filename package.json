@@ -1,0 +1,14 @@
+{
+  "name": "confetti_cuisine",
+  "version": "1.0.0",
+  "description": "A site for booking classes for cooking",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Alex Smith",
+  "license": "ISC",
+  "dependencies": {
+    "http-status-codes": "^2.1.4"
+  }
+}
