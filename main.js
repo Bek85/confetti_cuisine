@@ -1,10 +1,11 @@
 'use strict';
-const port = 3000;
-const http = require('http');
-const { StatusCodes } = require('http-status-codes');
-const router = require('./router');
-const contentTypes = require('./contentTypes');
-const utils = require('./utils');
+
+const port = 3000,
+  http = require('http'),
+  httpStatus = require('http-status-codes'),
+  router = require('./router'),
+  contentTypes = require('./contentTypes'),
+  utils = require('./utils');
 
 router.get('/', (req, res) => {
   res.writeHead(httpStatus.OK, contentTypes.htm);
@@ -12,28 +13,28 @@ router.get('/', (req, res) => {
 });
 
 router.get('/courses.html', (req, res) => {
-  res.writeHead(StatusCodes.OK, contentTypes.html);
+  res.writeHead(httpStatus.OK, contentTypes.html);
   utils.getFile('views/courses.html', res);
 });
 
 router.get('/contact.html', (req, res) => {
-  res.writeHead(StatusCodes.OK, contentTypes.html);
-  utils.getFile('views/contact/html', res);
+  res.writeHead(httpStatus.OK, contentTypes.html);
+  utils.getFile('views/contact.html', res);
 });
 
-router.get('/', (req, res) => {
-  res.writeHead(StatusCodes.OK, contentTypes.html);
+router.post('/', (req, res) => {
+  res.writeHead(httpStatus.OK, contentTypes.html);
   utils.getFile('views/thanks.html', res);
 });
 
 router.get('/graph.png', (req, res) => {
-  res.writeHead(StatusCodes.OK, contentTypes.png);
-  utils.getFile('/public/images/graph.png', res);
+  res.writeHead(httpStatus.OK, contentTypes.png);
+  utils.getFile('public/images/graph.png', res);
 });
 
-router.get('/people.jpg', (res, req) => {
-  res.writeHead(StatusCodes.OK, contentTypes.jpg);
-  utils.getFile('/public/images/people.jpg', res);
+router.get('/people.jpg', (req, res) => {
+  res.writeHead(httpStatus.OK, contentTypes.jpg);
+  utils.getFile('public/images/people.jpg', res);
 });
 
 router.get('/product.jpg', (req, res) => {
