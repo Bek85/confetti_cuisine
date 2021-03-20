@@ -7,7 +7,7 @@ const contentTypes = require('./contentTypes');
 const utils = require('./utils');
 
 router.get('/', (req, res) => {
-  res.writeHead(StatusCodes.OK, contentTypes.html);
+  res.writeHead(httpStatus.OK, contentTypes.htm);
   utils.getFile('views/index.html', res);
 });
 
@@ -48,7 +48,7 @@ router.get('/confetti_cuisine.css', (req, res) => {
 
 router.get('/bootstrap.css', (req, res) => {
   res.writeHead(httpStatus.OK, contentTypes.css);
-  utils.getFile('public/css/bootstrap.css', res);
+  utils.getFile('public/css/bootstrap.min.css', res);
 });
 
 router.get('/confetti_cuisine.js', (req, res) => {
